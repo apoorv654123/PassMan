@@ -12,6 +12,7 @@ const Navbar = () => {
           <a className='hover:font-semibold' href="/">Home</a>
           <a className='hover:font-semibold' href="#">About</a>
           <a className='hover:font-semibold' href="#">Contact</a>
+          <a className='hover:font-semibold' href="#">GitHub</a>
         </li>
       </ul>
       </div>
