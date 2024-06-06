@@ -25,7 +25,6 @@ const Manager = () => {
   const savePassword = () => {
     setPasswordArray([...passwordArray, form]);
     localStorage.setItem("passwords", JSON.stringify([...passwordArray, form]));
-    console.log([...passwordArray, form]);
   };
 
   const handleChange = (e) => {
@@ -111,21 +110,13 @@ const Manager = () => {
               </tr>
             </thead>
             <tbody className="bg-purple-200">
-              <tr>
-                <td className="py-2 border border-white text-center w-20">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                <td className="py-2 border border-white text-center w-20">Malcolm Lockyer</td>
-                <td className="py-2 border border-white text-center w-20">1961</td>
+              {passwordArray.map((item,index)=>{
+              return (<tr key={index}>
+                <td className="py-2 border border-white text-center w-20"><a href={item.site} target="_blank">{item.site}</a></td>
+                <td className="py-2 border border-white text-center w-20">{item.username}</td>
+                <td className="py-2 border border-white text-center w-20">{item.password}</td>
               </tr>
-              <tr>
-                <td className="py-2 border border-white text-center w-20">Witchy Woman</td>
-                <td className="py-2 border border-white text-center w-20">The Eagles</td>
-                <td className="py-2 border border-white text-center w-20">1972</td>
-              </tr>
-              <tr>
-                <td className="py-2 border border-white text-center w-20">Shining Star</td>
-                <td className="py-2 border border-white text-center w-20">Earth, Wind, and Fire</td>
-                <td className="py-2 border border-white text-center w-20">1975</td>
-              </tr>
+              )})}
             </tbody>
           </table>
           )}

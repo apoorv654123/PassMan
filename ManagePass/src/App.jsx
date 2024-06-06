@@ -1,17 +1,20 @@
-import './App.css'
+import "./App.css";
 
-import Manager from './components/Manager'
-import Navbar from './components/Navbar'
-import { useState } from 'react'
+import Footer from "./components/Footer";
+import Manager from "./components/Manager";
+import Navbar from "./components/Navbar";
+import { useState } from "react";
 
 function App() {
-
   return (
     <>
-    <Navbar />
-    <Manager />
+      <Navbar />
+      <div className="min-h-[83vh]">
+        <Manager />
+      </div>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
